@@ -1,0 +1,13 @@
+com\library\model\IssueRecord.class
+com\library\App.class
+com\library\util\StudentManager.class
+com\library\controller\DashboardController.class
+com\library\controller\AddBookController.class
+com\library\model\Student.class
+com\library\model\Book.class
+com\library\controller\LoginController.class
+com\library\dao\BookDAO.class
+com\library\dao\IssueRecordDAO.class
+com\library\util\SessionManager.class
+com\library\controller\IssueReturnController.class
+com\library\controller\ViewBooksController.class

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controller.ViewBooksController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox style="-fx-background-color: #2c3e50; -fx-padding: 10;" alignment="CENTER_LEFT">
+            <Label text="View All Books" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="10.0" style="-fx-padding: 20;">
+            <!-- Summary Bar -->
+            <HBox spacing="30.0" style="-fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7;">
+                <Label text="Total: " style="-fx-font-weight: bold;" />
+                <Label fx:id="totalLabel" text="0" style="-fx-text-fill: #2980b9; -fx-font-weight: bold;" />
+                <Label text="Available: " style="-fx-font-weight: bold;" />
+                <Label fx:id="availableLabel" text="0" style="-fx-text-fill: #27ae60; -fx-font-weight: bold;" />
+                <Label text="Issued: " style="-fx-font-weight: bold;" />
+                <Label fx:id="issuedLabel" text="0" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;" />
+            </HBox>
+
+            <!-- Books Table -->
+            <TableView fx:id="booksTable" prefHeight="400.0" prefWidth="860.0">
+                <columns>
+                    <TableColumn fx:id="bookIdCol" prefWidth="60.0" text="Book ID" />
+                    <TableColumn fx:id="titleCol" prefWidth="200.0" text="Title" />
+                    <TableColumn fx:id="authorCol" prefWidth="150.0" text="Author" />
+                    <TableColumn fx:id="isbnCol" prefWidth="120.0" text="ISBN" />
+                    <TableColumn fx:id="categoryCol" prefWidth="120.0" text="Category" />
+                    <TableColumn fx:id="statusCol" prefWidth="100.0" text="Status" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- Bottom Bar -->
+    <bottom>
+        <HBox spacing="15.0" style="-fx-padding: 20;" alignment="CENTER">
+            <Button fx:id="refreshBtn" text="Refresh" onAction="#onRefresh" style="-fx-font-size: 12; -fx-padding: 8 20; -fx-background-color: #3498db; -fx-text-fill: white;" />
+            <Button fx:id="backBtn" text="Back to Dashboard" onAction="#onBack" style="-fx-font-size: 12; -fx-padding: 8 20; -fx-background-color: #95a5a6; -fx-text-fill: white;" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
