@@ -1,9 +1,16 @@
 version: 0.1
-component: build
-timeoutInSeconds: 600
 
-run:
-  command: |
-    echo "OCI DevOps Build Started"
-    ls -la
-    mvn clean install
+component: build
+
+steps:
+  - type: Command
+    name: "Install"
+    command: echo "Installing..."
+
+  - type: Command
+    name: "Build"
+    command: echo "Building project..."
+
+  - type: Command
+    name: "Run"
+    command: echo "Running project..."
