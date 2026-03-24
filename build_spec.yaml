@@ -6,13 +6,15 @@ timeoutInSeconds: 600
 
 shell: bash
 
-phases:
-  build:
-    commands:
-      - echo "OCI DevOps build started"
-      - ls -la
-      - mvn clean install
+steps:
+  - type: Command
+    name: "Build Step"
+    command: |
+      echo "OCI DevOps Build Started"
+      ls -la
+      mvn clean install
 
-artifacts:
-  files:
-    - '**/*'
+outputArtifacts:
+  - name: build_output
+    type: BINARY
+    location: target
